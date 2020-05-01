@@ -1,0 +1,13 @@
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\bin\Debug\netcoreapp3.1\Lab_01.exe
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\bin\Debug\netcoreapp3.1\Lab_01.deps.json
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\bin\Debug\netcoreapp3.1\Lab_01.runtimeconfig.json
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\bin\Debug\netcoreapp3.1\Lab_01.runtimeconfig.dev.json
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\bin\Debug\netcoreapp3.1\Lab_01.dll
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\bin\Debug\netcoreapp3.1\Lab_01.pdb
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\obj\Debug\netcoreapp3.1\Lab_01.csprojAssemblyReference.cache
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\obj\Debug\netcoreapp3.1\Lab_01.csproj.CoreCompileInputs.cache
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\obj\Debug\netcoreapp3.1\Lab_01.AssemblyInfoInputs.cache
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\obj\Debug\netcoreapp3.1\Lab_01.AssemblyInfo.cs
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\obj\Debug\netcoreapp3.1\Lab_01.dll
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\obj\Debug\netcoreapp3.1\Lab_01.pdb
+C:\Users\ajmar\OneDrive\Documentos\Programacion\Lab-01\Lab_01\obj\Debug\netcoreapp3.1\Lab_01.genruntimeconfig.cache

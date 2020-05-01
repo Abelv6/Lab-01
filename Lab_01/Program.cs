@@ -7,13 +7,15 @@ namespace Lab_01
     {
         static void Main(string[] args)
         {
+            registro();
         }
         static void registro()
         {
             string temp, confirm1, confirm2, confirmRan;
             int x = 1, y = 2;
-            TextWriter Archivo;
-            Archivo = new StreamWriter ("Users.txt");
+            TextWriter Archivo = new StreamWriter ("Users.txt");
+                            Archivo.Close();
+            StreamWriter escritor = File.AppendText("Users.txt");
             Console.Write("►Por favor ungrese el nombre del nuevo usuario◄: ");
             temp = Console.ReadLine();
             Console.Write("►Ahora ingrese su contraseña◄: ");
@@ -31,10 +33,11 @@ namespace Lab_01
                     {
                         if(confirmRan == "admin"||confirmRan == "user")
                         {
+                            y++;
                             temp += ("*" + confirmRan);
-                            Archivo.WriteLine(temp);
-                            Archivo.Close();
+                            escritor.WriteLine(temp);
                             Console.Write("►Usuario creado precione cualquier tecla para continuar.◄");
+                            escritor.Close();
                             
                             Console.ReadKey();
                             Console.Clear();
