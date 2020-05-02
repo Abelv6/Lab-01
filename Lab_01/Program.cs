@@ -8,7 +8,8 @@ namespace Lab_01
         static Metodos_Archivos metA = new Metodos_Archivos();
         static void Main(string[] args)
         {
-            metA.registro();
+            //metA.registro();
+            metA.inicio_de_secion();
         }
         
     }

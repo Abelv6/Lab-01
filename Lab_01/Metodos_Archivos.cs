@@ -7,6 +7,7 @@ namespace Lab_01
 {
     class Metodos_Archivos
     {
+        static StreamReader lector;
         public void registro()
         {
             string temp, confirm1, confirm2, confirmRan;
@@ -60,7 +61,38 @@ namespace Lab_01
 
         public void inicio_de_secion()
         {
+            string busqueda = "", linea = "", contra = "";
 
+            Console.Write("Ingrese su usuario: ");
+            busqueda = Console.ReadLine();
+            Console.Write("Ingrese su contraseña");
+            contra = Console.ReadLine();
+            using (lector = new StreamReader("Users.txt"))
+            {
+                while ((linea = lector.ReadLine()) != null)
+                {
+                    string[] datos = linea.Split('*');
+                    if (datos[0] == busqueda && datos[1]==contra)
+                    {
+                        if(datos[2] == "admin")
+                        {
+                            Console.WriteLine("Es un administrados");
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Es un user");
+                            Console.ReadKey();
+                        }
+                    }
+                    else if(linea == null)
+                    {
+                        Console.WriteLine("Usuario Invalido");
+                    }
+                }
+
+            } 
+            Console.ReadKey();
         }
     }
 }
