@@ -72,24 +72,34 @@ namespace Lab_01
                 while ((linea = lector.ReadLine()) != null)
                 {
                     string[] datos = linea.Split('*');
-                    if (datos[0] == busqueda && datos[1]==contra)
+                    if (datos[0] == busqueda)
                     {
-                        if(datos[2] == "admin")
+                        if(datos[1] == contra)
                         {
-                            Console.WriteLine("Es un administrados");
-                            Console.ReadKey();
+                            if(datos[2] == "admin")
+                            {
+                                lector.Close();
+                                Console.WriteLine("Es un administrados");
+                                Console.ReadKey();//menu admin
+                            }
+                            else
+                            {
+                                lector.Close();
+                                Console.WriteLine("Es un user");
+                                Console.ReadKey();//menu user
+                            }
                         }
                         else
                         {
-                            Console.WriteLine("Es un user");
-                            Console.ReadKey();
+                            Console.WriteLine("Contraseña Invalida");
+                            Console.WriteLine("Precione cualquier tecla para continuar");
+                            inicio_de_secion();
                         }
                     }
-                    else if(linea == null)
-                    {
-                        Console.WriteLine("Usuario Invalido");
-                    }
+                    
                 }
+                Console.WriteLine("Usuario no encontrado");
+                inicio_de_secion();
 
             } 
             Console.ReadKey();

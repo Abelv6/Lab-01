@@ -70,4 +70,11 @@ namespace Lab_01
             }
         }
     }*/
+
+    /*else if(datos[0]!= busqueda)
+                    {
+                        Console.WriteLine("Usuario Invalido Precione cualquier tecla para continuar");
+                        Console.ReadKey();
+                        inicio_de_secion();
+                    }*/
 }
