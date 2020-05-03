@@ -16,7 +16,8 @@ namespace Lab_01
             {
                 while ((linea = Leer.ReadLine()) != null)
                 {
-                    Console.WriteLine("\t\t" + linea);
+                    string[] datos = linea.Split('*');
+                    Console.WriteLine("Producto: " + datos[0] + " " + "Unidades: " + datos[1] + " " + "Precio actual: Q" + datos[2]);
                 }
                 Leer.Close();
                 Console.ReadKey();

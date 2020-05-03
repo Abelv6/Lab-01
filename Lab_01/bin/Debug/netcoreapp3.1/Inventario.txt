@@ -1,6 +1,6 @@
-Control*12
-pachon*12
-patos*95
-mouse*30
-peines*10
-Cables*10
+Control*12*500
+pachon*12*20
+mouse*30*75
+peines*10*15
+Cables*10*20
+patos*100*120

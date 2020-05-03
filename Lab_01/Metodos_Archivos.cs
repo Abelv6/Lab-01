@@ -20,6 +20,7 @@ namespace Lab_01
             Console.Write("►Confirme la contraseña◄: ");
             confirm2 = Console.ReadLine();
             while (x == 1)
+            {
                 if (confirm1 == confirm2)
                 {
                     x++;
@@ -57,6 +58,7 @@ namespace Lab_01
                     Console.Write("►Confirme la contraseña◄");
                     confirm2 = Console.ReadLine();
                 }
+            }
         }
 
         public void inicio_de_secion()
