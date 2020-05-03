@@ -1,0 +1,3 @@
+Control*12
+mause*20
+taclado*15
