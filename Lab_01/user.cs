@@ -20,7 +20,8 @@ namespace Lab_01
         public void Cargar_Inventario()
         {
             Console.WriteLine("Inventario:\t");
-            string linea = "", Producto = "", Cantidad = "";
+            string linea = "", Producto = "", CantTemp = "";
+            double Cantidad;
             /*Lista de contactos */
             using (Leer = new StreamReader("Inventario.txt"))
             {
@@ -33,7 +34,7 @@ namespace Lab_01
             Console.Write("\nIngrese nombre del Producto a agregar: ");
             Producto = Console.ReadLine();
             Console.Write("Cantidad: ");
-            Cantidad = Console.ReadLine();
+            Cantidad = double.Parse(Console.ReadLine());
             using (escribir = new StreamWriter("InventarioTemp.txt"))
             {
                 using (Leer = new StreamReader("Inventario.txt"))
@@ -44,12 +45,23 @@ namespace Lab_01
                         if (datos[0] != Producto)
                         {
                             escribir.WriteLine(linea);
+                            
+                        }
+                        else
+                        {
+                            CantTemp = datos[1];
+                            Cantidad += double.Parse(CantTemp);
                         }
                     }
                 }
             }
             File.Delete("Inventario.txt");
-            File.Move("InventarioTemp.txt", "Inventario");
+            File.Move("InventarioTemp.txt", "Inventario.txt");
+            Leer.Close();
+            escribir.Close();
+            escribir = File.AppendText("Inventario.txt");
+            escribir.WriteLine(Producto+"*"+Cantidad);
+            escribir.Close();
             Console.ReadKey();
         }
     }

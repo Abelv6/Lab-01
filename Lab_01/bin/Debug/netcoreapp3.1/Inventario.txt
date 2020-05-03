@@ -1,3 +1,6 @@
 Control*12
-mause*20
-taclado*15
+pachon*12
+patos*95
+mouse*30
+peines*10
+Cables*10
