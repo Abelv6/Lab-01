@@ -7,11 +7,14 @@ namespace Lab_01
     {
         static Metodos_Archivos metA = new Metodos_Archivos();
         static user U = new user();
+        static admin ad = new admin();
         static void Main(string[] args)
         {
             //metA.registro();
             //metA.inicio_de_secion();
-            U.Cargar_Inventario();
+            //U.Cargar_Inventario();
+            //ad.inventareado();
+            ad.Usuarios();
         }
         
     }

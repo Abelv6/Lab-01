@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace Lab_01
 {
@@ -15,14 +16,21 @@ namespace Lab_01
          */
         public void Facturas()
         {
-
+            Console.WriteLine("Inventario actual:");
+            string linea = "";
+            using (Leer = new StreamReader("Inventario.txt"))
+            {
+                while ((linea = Leer.ReadLine()) != null)
+                {
+                    Console.WriteLine("\t\t" + linea);
+                }
+            }
         }
         public void Cargar_Inventario()
         {
             Console.WriteLine("Inventario:\t");
             string linea = "", Producto = "", CantTemp = "";
-            double Cantidad;
-            /*Lista de contactos */
+            double Cantidad, precio;
             using (Leer = new StreamReader("Inventario.txt"))
             {
                 while ((linea = Leer.ReadLine()) != null)
@@ -35,6 +43,8 @@ namespace Lab_01
             Producto = Console.ReadLine();
             Console.Write("Cantidad: ");
             Cantidad = double.Parse(Console.ReadLine());
+            Console.Write("Precio o Nuevo Precio: ");
+            precio = double.Parse(Console.ReadLine());
             using (escribir = new StreamWriter("InventarioTemp.txt"))
             {
                 using (Leer = new StreamReader("Inventario.txt"))
@@ -60,7 +70,7 @@ namespace Lab_01
             Leer.Close();
             escribir.Close();
             escribir = File.AppendText("Inventario.txt");
-            escribir.WriteLine(Producto+"*"+Cantidad);
+            escribir.WriteLine(Producto+"*"+Cantidad+"*"+precio);
             escribir.Close();
             Console.ReadKey();
         }
