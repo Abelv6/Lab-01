@@ -1,0 +1,13 @@
+Factura No.498123544
+Nombre del Cliente: Abel
+NIT: 156324-7
+Fecha: 04/05/2020
+Detalles: 
+Producto: pato
+Cantidad del Producto: 2
+Precio del Producto100
+Producto: mouse
+Cantidad del Producto: 1
+Precio del Producto75
+
+El total a pagar es: 275

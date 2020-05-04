@@ -1,6 +1,4 @@
-Control*12*500
-pachon*12*20
-mouse*30*75
-peines*10*15
-Cables*10*20
-patos*100*120
+lapiz*200*1
+ligas*70*1
+pato*3*100
+mouse*19*75

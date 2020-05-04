@@ -1,0 +1,10 @@
+Factura No.159753
+Nombre del Cliente: Keily
+NIT: 1596547-5
+Fecha: 03/05/2020
+Detalles: 
+Producto: mouse
+Cantidad del Producto: -14
+Precio del Producto10
+
+El total a pagar es: 85

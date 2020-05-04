@@ -17,11 +17,11 @@ namespace Lab_01
          */
         public void Facturas()
         {
-            string Correlativo = "", Nombre = "", NIT = "", Fecha = "", Detalle = "", MontoTt = "", Seguir = "Si", cant = "", Precio="";
+            string CantTemp="", Correlativo = "",NombreProd = "", Nombre = "", NIT = "", Fecha = "", Detalle = "", MontoTt = "", Seguir = "Si", Precio="";
             double Tt = 0;
-            int CasillasNo = 0, x = 0;
-            Console.WriteLine("Inventario actual:");
-            string linea = "";
+            int CasillasNo = 0, x = 0, w = 0, cant = 0;
+            Console.WriteLine("Inventario actual: ");
+            string linea = "",line="";
             using (Leer = new StreamReader("Inventario.txt"))
             {
                 while ((linea = Leer.ReadLine()) != null)
@@ -33,34 +33,70 @@ namespace Lab_01
             Leer.Close();
             Console.Write("Ingrese el Correlativo de la factura: ");
             Correlativo = Console.ReadLine();
-            Console.Write("Ingrese el nimbre del Cliente: ");
+            Console.Write("Ingrese el nombre del Cliente: ");
             Nombre = Console.ReadLine();
-            Console.Write("Ingrese el NIT del Cliente");
+            Console.Write("Ingrese el NIT del Cliente: ");
             NIT = Console.ReadLine();
-            Console.Write("Ingrese la Fecha");
+            Console.Write("Ingrese la Fecha: ");
             Fecha = Console.ReadLine();
+            
             do
             {
-                Console.WriteLine("Nombre del Producto: ");
-                Detalle += (Console.ReadLine()+"*");
-                Console.WriteLine("Cantidad del Producto");
-                cant = Console.ReadLine();
-                Detalle += (cant + "*");
-                Console.WriteLine("Precio del Ptodicto: ");
+                Console.Write("Nombre del Producto: ");
+                NombreProd = Console.ReadLine();
+                Detalle += ("Producto: " + NombreProd + "*");//<==
+                Console.Write("Cantidad del Producto: ");
+                cant = int.Parse(Console.ReadLine());
+                Detalle += ("Cantidad del Producto: " + cant + "*");//<==
+                Console.Write("Precio del Ptodicto: ");
                 Precio = Console.ReadLine();
-                Detalle += (Precio + "*");
-                Tt += double.Parse(cant)*double.Parse(Precio);
+                Detalle += ("Precio del Producto" + Precio + "*");//<==
+                Tt += cant * double.Parse(Precio);
+
+                using (escribir = new StreamWriter("InventarioTemp.txt"))
+                {
+                    using (Leer = new StreamReader("Inventario.txt"))
+                    {
+                        while ((line = Leer.ReadLine()) != null)
+                        {
+                            string[] datos = line.Split('*');
+                            if (datos[0] != NombreProd)
+                            {
+                                escribir.WriteLine(line);
+                            }
+                            else if (datos[0]==NombreProd)
+                            {
+                                CantTemp = datos[1];
+
+                                cant = int.Parse(CantTemp)-cant;
+                                Console.WriteLine(w);
+                                w++;
+
+                            }
+                         
+                        }
+                        Console.WriteLine(w);
+                        
+                    }
+                }
+                File.Delete("Inventario.txt");
+                File.Move("InventarioTemp.txt", "Inventario.txt");
+                Leer.Close();
+                escribir.Close();
+                escribir = File.AppendText("Inventario.txt");
+                escribir.WriteLine(NombreProd + "*" + cant + "*" + Precio);
+                escribir.Close();
                 Console.WriteLine("Desea agregar otro Producto: ");
                 Seguir = Console.ReadLine();
             } while (Seguir == "Si"||Seguir == "si");
             MontoTt = ("El total a pagar es: " + Tt);
 
-            string line = "";
+            string line2 = "";
             Leer = File.OpenText("Correlativos_Facturas.txt");
-            while (line != null)
+            while (line2 != null)
             {
-                line = Leer.ReadLine();
-                if (Correlativo == line)
+                line2 = Leer.ReadLine();
+                if (Correlativo == line2)
                 {
                     Console.WriteLine("Este correlativo de factura ya exisre");
                     Console.Write("Porfavor corriga el correlativo: ");
@@ -82,13 +118,18 @@ namespace Lab_01
             do
             { 
                 escribir.WriteLine(detalles[x]);
-                Console.WriteLine(detalles[x]);
                 x = x + 1;
             }
             while (CasillasNo > x);
             escribir.WriteLine(MontoTt);
             escribir.Close();
-        }
+        } 
+
+
+
+
+
+
         public void Cargar_Inventario()
         {
             Console.WriteLine("Inventario:\t");

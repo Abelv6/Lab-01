@@ -1,0 +1,13 @@
+Factura No.888
+Nombre del Cliente: Melany
+NIT: 1253467-9
+Fecha: 03/05/2020
+Detalles: 
+Producto: patos
+Cantidad del Producto: 1
+Precio del Producto120
+Producto: Control
+Cantidad del Producto: 6
+Precio del Producto500
+
+El total a pagar es: 3120

@@ -12,7 +12,7 @@ namespace Lab_01
         {
             //metA.registro();
             //metA.inicio_de_secion();
-            //.Cargar_Inventario();
+            //U.Cargar_Inventario();
             //ad.inventareado();
             //ad.Usuarios();
             U.Facturas();

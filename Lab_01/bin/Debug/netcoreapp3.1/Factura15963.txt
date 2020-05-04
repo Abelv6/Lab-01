@@ -1,0 +1,10 @@
+Factura No.15963
+Nombre del Cliente: Abel
+NIT: 1568974-1
+Fecha: 04/05/2020
+Detalles: 
+Producto: ligas
+Cantidad del Producto: 20
+Precio del Producto1
+
+El total a pagar es: 20
