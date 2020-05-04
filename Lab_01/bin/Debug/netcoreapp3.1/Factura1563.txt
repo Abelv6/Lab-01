@@ -1,0 +1,13 @@
+Factura No.1563
+Nombre del Cliente: Abel
+NIT: 465
+Fecha: 03/05/2020
+Detalles: 
+Canela
+5
+2
+Sal
+4
+10
+
+El total a pagar es: 50

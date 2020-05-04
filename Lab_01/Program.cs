@@ -11,10 +11,11 @@ namespace Lab_01
         static void Main(string[] args)
         {
             //metA.registro();
-            metA.inicio_de_secion();
+            //metA.inicio_de_secion();
             //.Cargar_Inventario();
             //ad.inventareado();
             //ad.Usuarios();
+            U.Facturas();
         }
         
     }
