@@ -1,9 +1,0 @@
-Factura No.123
-Nombre del Cliente: Malany
-NIT: 189654-9
-Fecha: 03/05/2020
-Producto: patos
-Cantidad del Producto: 1
-Precio del Producto120
-
-El total a pagar es: 120

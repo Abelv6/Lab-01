@@ -11,15 +11,13 @@ namespace Lab_01
     {
         static StreamReader Leer;
         static StreamWriter escribir;
-        /*
-         * Cargar Inverio
-         *  facturar productos
-         */
+
+        static Menus M = new Menus();
         public void Facturas()
         {
             string CantTemp="", Correlativo = "",NombreProd = "", Nombre = "", NIT = "", Fecha = "", Detalle = "", MontoTt = "", Seguir = "Si", Precio="";
             double Tt = 0;
-            int CasillasNo = 0, x = 0, w = 0, cant = 0;
+            int CasillasNo = 0, x = 0, cant = 0;
             Console.WriteLine("Inventario actual: ");
             string linea = "",line="";
             using (Leer = new StreamReader("Inventario.txt"))
@@ -50,7 +48,7 @@ namespace Lab_01
                 Detalle += ("Cantidad del Producto: " + cant + "*");//<==
                 Console.Write("Precio del Ptodicto: ");
                 Precio = Console.ReadLine();
-                Detalle += ("Precio del Producto" + Precio + "*");//<==
+                Detalle += ("Precio del Producto: " + Precio + "*");//<==
                 Tt += cant * double.Parse(Precio);
 
                 using (escribir = new StreamWriter("InventarioTemp.txt"))
@@ -69,13 +67,11 @@ namespace Lab_01
                                 CantTemp = datos[1];
 
                                 cant = int.Parse(CantTemp)-cant;
-                                Console.WriteLine(w);
-                                w++;
 
                             }
                          
                         }
-                        Console.WriteLine(w);
+
                         
                     }
                 }
@@ -123,7 +119,12 @@ namespace Lab_01
             while (CasillasNo > x);
             escribir.WriteLine(MontoTt);
             escribir.Close();
-        } 
+            Console.WriteLine("Factura gurdada.");
+            Console.WriteLine("Precione cualquier tecla para volver al menu");
+            Console.ReadKey();
+            Console.Clear();
+            M.Menu_Users();
+        }
 
 
 
@@ -177,8 +178,12 @@ namespace Lab_01
             escribir = File.AppendText("Inventario.txt");
             escribir.WriteLine(Producto+"*"+Cantidad+"*"+precio);
             escribir.Close();
+            Console.WriteLine("Inventario cargado");
+            Console.WriteLine("Precione cualquier tecla para volver al menu");
             Console.ReadKey();
+            Console.Clear();
+            M.Menu_Users();
         }
-        
+
     }
 }

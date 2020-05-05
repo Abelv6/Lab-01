@@ -8,6 +8,8 @@ namespace Lab_01
     class admin
     {
         static StreamReader Leer;
+        static StreamReader lector;
+        static Menus M = new Menus();
         public void inventareado()
         {
             Console.WriteLine("Inventario actual:");
@@ -22,6 +24,10 @@ namespace Lab_01
                 Leer.Close();
                 Console.ReadKey();
             }
+            Console.WriteLine("Precione cualquier tecla para volver al menu");
+            Console.ReadKey();
+            Console.Clear();
+            M.Menu_Admin();
         }
         public void Usuarios()
         {
@@ -31,16 +37,58 @@ namespace Lab_01
                 while ((linea = Leer.ReadLine()) != null)
                 {
                     string[] datos = linea.Split('*');
-                    Console.WriteLine("Usuario: "+datos[0]+" "+"Contraseña: "+datos[1]+" "+"Rango: "+datos[2]);
+                    Console.WriteLine("Usuario: " + datos[0] + " " + "Contraseña: " + datos[1] + " " + "Rango: " + datos[2]);
                 }
                 Leer.Close();
                 Console.ReadKey();
             }
+            Console.WriteLine("Precione cualquier tecla para volver al menu");
+            Console.ReadKey();
+            Console.Clear();
+            M.Menu_Admin();
         }
-        /*
-         * Inventario
-         * Usuarios (ver y crear)
-         * Facturas (ver todas las existentes
-         */
+        public void Mostrar_Facturas()
+        {
+            string correlatico = "";
+            int encontrada = 1;
+            Console.WriteLine("Correlativos de Facturas existentes: ");
+            string linea = "", line = "", line2 = "";
+            using (Leer = new StreamReader("Correlativos_Facturas.txt"))
+            {
+                while ((linea = Leer.ReadLine()) != null)
+                {
+                    Console.WriteLine(linea);
+                }
+            }
+            Leer.Close();
+            Console.Write("Ingrese el corelativo de la cactura que desa ver: ");
+            correlatico = Console.ReadLine();
+            Leer = File.OpenText("Correlativos_Facturas.txt");
+            while((line = Leer.ReadLine())!=null)
+            {
+                if(line == correlatico)
+                {
+                    encontrada++;
+                    Console.WriteLine("Factura encontrada");
+                    lector = File.OpenText("Factura" + correlatico + ".txt");
+                    while ((line2 = lector.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line2);
+                    }
+                }
+                
+            }
+            if(encontrada == 1)
+            {
+                    Console.WriteLine("Factura Inexistente");
+            }
+
+            Leer.Close();
+            Console.WriteLine("Precione cualquier tecla para volver al menu");
+            Console.ReadKey();
+            Console.Clear();
+            M.Menu_Admin();
+        }
+     
     }
 }

@@ -10,12 +10,7 @@ namespace Lab_01
         static admin ad = new admin();
         static void Main(string[] args)
         {
-            //metA.registro();
-            //metA.inicio_de_secion();
-            //U.Cargar_Inventario();
-            //ad.inventareado();
-            //ad.Usuarios();
-            U.Facturas();
+            metA.inicio_de_secion();
         }
         
     }

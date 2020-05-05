@@ -7,17 +7,18 @@ namespace Lab_01
 {
     class Metodos_Archivos
     {
+        static Menus M = new Menus();
         static StreamReader lector;
         public void registro()
         {
             string temp, confirm1, confirm2, confirmRan;
             int x = 1, y = 2;
             StreamWriter escritor = File.AppendText("Users.txt");
-            Console.Write("►Por favor ungrese el nombre del nuevo usuario◄: ");
+            Console.Write("Por favor ungrese el nombre del nuevo usuario: ");
             temp = Console.ReadLine();
-            Console.Write("►Ahora ingrese su contraseña◄: ");
+            Console.Write("Ahora ingrese su contraseña: ");
             confirm1 = Console.ReadLine();
-            Console.Write("►Confirme la contraseña◄: ");
+            Console.Write("Confirme la contraseña: ");
             confirm2 = Console.ReadLine();
             while (x == 1)
             {
@@ -25,7 +26,7 @@ namespace Lab_01
                 {
                     x++;
                     temp += ("*" + confirm1);
-                    Console.Write("►Ahora seleccione su rango [admin/user]◄");
+                    Console.Write("Ahora seleccione su rango [admin/user]: ");
                     confirmRan = Console.ReadLine();
                     while (y == 2)
                     {
@@ -34,28 +35,28 @@ namespace Lab_01
                             y++;
                             temp += ("*" + confirmRan);
                             escritor.WriteLine(temp);
-                            Console.Write("►Usuario creado precione cualquier tecla para continuar.◄");
+                            Console.Write("Usuario creado precione cualquier tecla para continuar.");
                             escritor.Close();
 
                             Console.ReadKey();
                             Console.Clear();
-                            //LLamar a menu
+                            M.Menu_Admin();
                         }
                         else
                         {
-                            Console.Write("►Rango no valido◄");
-                            Console.Write("►Inserte nuevamente el rango del usuario◄");
-                            Console.Write("►[admin/user]◄");
+                            Console.Write("Rango no valido");
+                            Console.Write("Inserte nuevamente el rango del usuario");
+                            Console.Write("[admin/user]: ");
                             confirmRan = Console.ReadLine();
                         }
                     }
                 }
                 else
                 {
-                    Console.Write("►Confirmacion de contraseña invalida◄");
-                    Console.Write("►Escriba la contraseña◄");
+                    Console.Write("Confirmacion de contraseña invalida");
+                    Console.Write("Escriba la contraseña: ");
                     confirm1 = Console.ReadLine();
-                    Console.Write("►Confirme la contraseña◄");
+                    Console.Write("Confirme la contraseña: ");
                     confirm2 = Console.ReadLine();
                 }
             }
@@ -67,7 +68,7 @@ namespace Lab_01
 
             Console.Write("Ingrese su usuario: ");
             busqueda = Console.ReadLine();
-            Console.Write("Ingrese su contraseña");
+            Console.Write("Ingrese su contraseña: ");
             contra = Console.ReadLine();
             using (lector = new StreamReader("Users.txt"))
             {
@@ -81,14 +82,14 @@ namespace Lab_01
                             if(datos[2] == "admin")
                             {
                                 lector.Close();
-                                Console.WriteLine("Es un administrados");
-                                Console.ReadKey();//menu admin
+                                Console.Clear();
+                                M.Menu_Admin();
                             }
                             else
                             {
                                 lector.Close();
-                                Console.WriteLine("Es un user");
-                                Console.ReadKey();//menu user
+                                Console.Clear();
+                                M.Menu_Users();
                             }
                         }
                         else
