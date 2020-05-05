@@ -65,6 +65,18 @@ namespace Lab_01
         public void inicio_de_secion()
         {
             string busqueda = "", linea = "", contra = "";
+            Console.WriteLine("Bienvenido a los patos.");
+            Console.WriteLine("");
+            Console.WriteLine("      ,;MMMM..");
+            Console.WriteLine("   ,;:MM'MMMMM.");
+            Console.WriteLine(",;.MM::M.MMMMMM:");
+            Console.WriteLine("''::.;'MMMMMMMMM");
+            Console.WriteLine("       ''''MMMMM;");
+            Console.WriteLine("           ':MMMM.");
+            Console.WriteLine("            'MMMM;");
+            Console.WriteLine("             :MMMM;.");
+            Console.WriteLine("              MMMMMM;...");
+            Console.WriteLine("              MMMMMMMMMMMMM;.;..");
 
             Console.Write("Ingrese su usuario: ");
             busqueda = Console.ReadLine();
