@@ -22,7 +22,6 @@ namespace Lab_01
                     Console.WriteLine("Producto: " + datos[0] + " " + "Unidades: " + datos[1] + " " + "Precio actual: Q" + datos[2]);
                 }
                 Leer.Close();
-                Console.ReadKey();
             }
             Console.WriteLine("Precione cualquier tecla para volver al menu");
             Console.ReadKey();
@@ -31,6 +30,7 @@ namespace Lab_01
         }
         public void Usuarios()
         {
+            Console.WriteLine("Usuarios registrados: ");
             string linea;
             using (Leer = new StreamReader("Users.txt"))
             {
@@ -40,7 +40,6 @@ namespace Lab_01
                     Console.WriteLine("Usuario: " + datos[0] + " " + "Contraseña: " + datos[1] + " " + "Rango: " + datos[2]);
                 }
                 Leer.Close();
-                Console.ReadKey();
             }
             Console.WriteLine("Precione cualquier tecla para volver al menu");
             Console.ReadKey();
@@ -84,6 +83,7 @@ namespace Lab_01
             }
 
             Leer.Close();
+            lector.Close();
             Console.WriteLine("Precione cualquier tecla para volver al menu");
             Console.ReadKey();
             Console.Clear();
